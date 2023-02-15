@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+/* RESET CSS */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a class, which suggests default styling will be removed */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  color-scheme: light;
+  --clr-primary-300: #ffb964;
+  --clr-primary-400: #fa7453;
+  --clr-neutral-300: #fcfaf9;
+  --clr-neutral-400: #969696;
+  --clr-neutral-500: #191826;
+  --clr-accent-400: #66e2dc;
+}
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  --padding-inline: 2.25rem;
+  display: grid;
+  grid-template-columns: [full-start] minmax(var(--padding-inline), 1fr) [center-start] minmax(min-content, 69.375rem) [center-end] minmax(var(--padding-inline), 1fr) [full-end];
+}
+.container > * {
+  grid-column: center;
+}
+
+.grid-container {
+  --padding-inline: 2.25rem;
+  --num-grid: 1;
+  --col-gap: 0;
+  display: grid;
+  grid-template-columns: [full-start] minmax(var(--padding-inline), 1fr) [center-start] repeat(var(--num-grid), [col-start] minmax(0, calc(69.375rem / var(--num-grid)) [col-end])) [center-end] minmax(var(--padding-inline), 1fr) [full-end];
+  column-gap: var(--col-gap);
+}
+.grid-container > * {
+  grid-column: center;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: var(--clr-neutral-500);
+  font-size: 1rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+@media only screen and (min-width: 37.6em) {
+  body {
+    font-size: 1.125rem;
+    line-height: 1.5556;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  body {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+[class*=heading] {
+  font-weight: 700;
+  line-height: 1.2;
+  color: currentColor;
+}
+
+.heading--1 {
+  font-size: 2.5rem;
+}
+@media only screen and (min-width: 37.6em) {
+  .heading--1 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  .heading--1 {
+    font-size: 5.5rem;
+  }
+}
+
+.heading--2 {
+  font-size: 2rem;
+}
+@media only screen and (min-width: 62.5em) {
+  .heading--2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-500);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.875rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+.btn:hover {
+  background-color: var(--clr-primary-300);
+}
+.btn--dark {
+  background-color: var(--clr-neutral-500);
+  color: var(--clr-neutral-300);
+}
+.btn--dark:hover {
+  background-color: var(--clr-accent-400);
+}
+
+/*# sourceMappingURL=main.css.map */

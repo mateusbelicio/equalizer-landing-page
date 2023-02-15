@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Challenge by Frontend Mentor. Coded by Mateus Belício." />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Equalizer landing page</title>
-</head>
-<body>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="style/main.css" />
 
-  We make your music sound extraordinary.
+    <title>Frontend Mentor | Equalizer landing page</title>
+  </head>
+  <body class="grid-container">
+    <header class="header">
+      <div class="header__container container">
+        <img class="header__logo" src="assets/logo.svg" alt="" aria-hidden="true" />
+        <div class="header__text-box">
+          <h1 class="heading--1">We make your music sound extraordinary.</h1>
+          <p class="header__text">
+            A system audio equalizer specifically designed for Android and iOS. Freely tune the way
+            your music sounds with a professional grade parametric EQ & volume mixer. Control bass,
+            mids, treble, gain control, reverb, and more!
+          </p>
+        </div>
+      </div>
+    </header>
 
-  A system audio equalizer specifically designed for Android and iOS. Freely tune the 
-  way your music sounds with a professional grade parametric EQ & volume mixer. Control 
-  bass, mids, treble, gain control, reverb, and more!
+    <main>
+      <section class="premium">
+        <picture class="premium__image">
+          <img src="assets/illustration-app.png" alt="" />
+        </picture>
+        <div class="premium__card">
+          <h2 class="premium__title">Premium EQ</h2>
+          <p class="premium__text">
+            Get expert-level control with a robust equalizer, volume mixer, and spatial audio. Take
+            your listening experience to a whole new level and access all our incredible features!
+          </p>
+          <p class="premium__pricing">$4 <span>/ month</span></p>
+          <a href="#" class="btn btn--dark">
+            <img src="assets/icon-apple.svg" alt="" aria-hidden="true" class="btn-icon" />
+            iOS Download
+          </a>
+          <a href="#" class="btn">
+            <img src="assets/icon-android.svg" alt="" aria-hidden="true" class="btn-icon" />
+            Android Download
+          </a>
+        </div>
+      </section>
+    </main>
 
-  Premium EQ
-
-  Get expert-level control with a robust equalizer, volume mixer, and spatial audio. Take 
-  your listening experience to a whole new level and access all our incredible features!
-
-  $4 / month
-
-  iOS Download
-  Android Download
-
-  All rights reserved © Equalizer 2021
-  Have any problems? Contact us via social media or email us at equalizer@example.com
-
-</body>
+    <footer class="footer">
+      <img class="footer__logo" src="assets/logo.svg" alt="" aria-hidden="true" />
+      <p class="footer__copy">
+        All rights reserved &copy; Equalizer 2021 Have any problems? Contact us via social media or
+        email us at
+        <a href="mailto:equalizer@example.com" class="footer__link">equalizer@example.com</a>
+      </p>
+      <ul class="footer__social">
+        <li class="footer__social-item">
+          <a href="#" class="footer__social-link">
+            <svg class="footer__icon">
+              <use xlink:href="assets/sprites.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="#" class="footer__social-link">
+            <svg class="footer__icon">
+              <use xlink:href="assets/sprites.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="#" class="footer__social-link">
+            <svg class="footer__icon"><use xlink:href="assets/sprites.svg#icon-twitter"></use></svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>
