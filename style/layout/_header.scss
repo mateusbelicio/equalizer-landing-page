@@ -3,3 +3,24 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.header {
+  padding-block: to-rem(40) to-rem(166);
+
+  @include breakpoint('small') {
+    padding-block: to-rem(62) to-rem(250);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: to-rem(64);
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(20);
+  }
+}

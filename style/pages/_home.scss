@@ -3,3 +3,63 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.home {
+  position: relative;
+  background-color: clr('neutral', 300);
+  overflow-x: hidden;
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    aspect-ratio: 1;
+    width: to-rem(280);
+    border-radius: 50%;
+    filter: blur(to-rem(68));
+
+    position: absolute;
+    z-index: z('below');
+    transition: top 0.3s ease-in-out, right 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+
+  &::before {
+    opacity: 0.28;
+    background-color: #40fff6;
+    right: to-rem(-65);
+    top: to-rem(-104);
+  }
+
+  &::after {
+    opacity: 0.16;
+    background-color: #ff9201;
+    right: to-rem(-65);
+    top: to-rem(96);
+  }
+
+  @include breakpoint('small') {
+    // background-image: url(../../assets/bg-pattern-1.svg);
+    // background-repeat: no-repeat;
+    // background-position: top right;
+    // background-size: to-rem(312);
+
+    &::after,
+    &::before {
+      width: to-rem(384);
+    }
+
+    &::before {
+      right: to-rem(40);
+      top: to-rem(40);
+    }
+
+    &::after {
+      right: to-rem(40);
+      top: to-rem(312);
+    }
+  }
+
+  @include breakpoint('large') {
+    // background-image: url(../assets/bg-main-desktop.png);
+  }
+}

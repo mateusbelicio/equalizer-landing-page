@@ -3,3 +3,78 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.footer {
+  row-gap: to-rem(32);
+  padding-bottom: to-rem(80);
+  align-items: center;
+
+  &__copy {
+    font-size: to-rem(16);
+    font-weight: 400;
+    line-height: 1.625;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    color: currentColor;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: clr('primary');
+    }
+  }
+
+  &__social {
+    margin-top: to-rem(32);
+    display: flex;
+    gap: to-rem(20);
+    align-items: center;
+    justify-content: start;
+  }
+
+  &__social-link,
+  &__icon {
+    aspect-ratio: 1;
+    width: to-rem(20);
+    display: block;
+    color: currentColor;
+    transition: color 0.2s;
+
+    &:hover {
+      color: clr('primary');
+    }
+  }
+
+  @include breakpoint('small') {
+    &__copy {
+      grid-column: center-start / col-end 6;
+    }
+
+    &__social {
+      grid-column: col-start 7 / center-end;
+      justify-self: end;
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint('large') {
+    &__logo {
+      grid-column: center-start / col-end 3;
+    }
+
+    &__copy {
+      grid-column: col-start 4 / col-end 8;
+    }
+
+    &__social {
+      grid-column: col-start 11 / center-end;
+      justify-self: end;
+    }
+  }
+}
