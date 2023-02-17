@@ -267,12 +267,14 @@ body {
 @media only screen and (min-width: 37.6em) {
   .header__container {
     grid-column: center-start/col-end 9;
+    gap: 5.9375rem;
   }
 }
 @media only screen and (min-width: 62.5em) {
   .header__container {
     grid-column: center-start/col-end 10;
     width: 95%;
+    gap: 7.9375rem;
   }
 }
 .header__text-box {

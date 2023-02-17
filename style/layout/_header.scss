@@ -52,11 +52,13 @@
 
     @include breakpoint('small') {
       grid-column: center-start / col-end 9;
+      gap: to-rem(95);
     }
 
     @include breakpoint('large') {
       grid-column: center-start / col-end 10;
       width: 95%;
+      gap: to-rem(127);
     }
   }
 
