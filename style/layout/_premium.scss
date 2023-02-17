@@ -7,20 +7,54 @@
 .premium {
   padding-bottom: to-rem(390);
 
+  @include breakpoint('small') {
+    padding-bottom: to-rem(183);
+  }
+
+  @include breakpoint('large') {
+    padding-bottom: to-rem(202);
+  }
+
   &__content {
     position: relative;
     background-color: clr('neutral', 500);
     background-image: url(../assets/bg-pattern-2.svg);
     background-position: center top;
     background-repeat: no-repeat;
+    background-size: to-rem(280);
     border-radius: to-rem(12);
     color: clr('neutral', 300);
     min-height: to-rem(600);
 
     grid-column: full;
 
+    transition: background-size 0.4s ease-out, background-position 0.4s ease-out;
+
     @include breakpoint('small') {
       grid-column: center;
+      background-position: left 55% top to-rem(-30);
+    }
+
+    @include breakpoint('large') {
+      background-size: to-rem(312);
+      background-position: left 42% top to-rem(-40);
+
+      &::after {
+        content: '';
+        aspect-ratio: 1;
+        width: to-rem(384);
+        border-radius: 50%;
+
+        background-color: #ff7b40;
+        opacity: 0.16;
+        filter: blur(to-rem(68));
+
+        position: absolute;
+        right: to-rem(-192);
+        bottom: to-rem(-186);
+        z-index: z('below');
+        transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+      }
     }
   }
 
@@ -32,13 +66,19 @@
     top: to-rem(-98);
     left: 50%;
     transform: translateX(-50%);
+    transition: all 0.4s ease-out;
 
     @include breakpoint('small') {
       height: to-rem(556);
       transform: none;
       left: 9.18%;
-      bottom: to-rem(171);
+      bottom: to-rem(182);
       top: auto;
+    }
+
+    @include breakpoint('large') {
+      height: to-rem(642);
+      bottom: to-rem(171);
     }
 
     img {
@@ -51,6 +91,7 @@
     border-radius: to-rem(12);
     padding: to-rem(48) to-rem(36);
     max-width: to-rem(400);
+
     width: 100%;
 
     display: flex;
@@ -61,14 +102,20 @@
     top: to-rem(380);
     left: 50%;
     transform: translateX(-50%);
+    transition: all 0.4s ease-out;
 
     @include breakpoint('small') {
       padding: to-rem(48) to-rem(52);
       transform: none;
       right: 9.18%;
       left: auto;
-      top: auto;
-      bottom: minmax-font(-115, -96);
+      top: to-rem(150);
+    }
+
+    @include breakpoint('large') {
+      padding: to-rem(60) to-rem(56) to-rem(48);
+      max-width: to-rem(446);
+      top: to-rem(90);
     }
 
     .btn:first-of-type {
@@ -78,6 +125,10 @@
 
   &__text {
     margin-bottom: to-rem(24);
+
+    @include breakpoint('large') {
+      margin-bottom: to-rem(28);
+    }
   }
 
   &__pricing {
@@ -89,6 +140,10 @@
     align-items: center;
     gap: to-rem(16);
     margin-bottom: to-rem(20);
+
+    @include breakpoint('large') {
+      margin-bottom: to-rem(34);
+    }
 
     span {
       font-size: to-rem(20);

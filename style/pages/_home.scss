@@ -38,11 +38,6 @@
   }
 
   @include breakpoint('small') {
-    // background-image: url(../../assets/bg-pattern-1.svg);
-    // background-repeat: no-repeat;
-    // background-position: top right;
-    // background-size: to-rem(312);
-
     &::after,
     &::before {
       width: to-rem(384);
@@ -60,6 +55,14 @@
   }
 
   @include breakpoint('large') {
-    // background-image: url(../assets/bg-main-desktop.png);
+    &::before {
+      right: to-rem(156);
+      top: to-rem(100);
+    }
+
+    &::after {
+      right: to-rem(156);
+      top: to-rem(371);
+    }
   }
 }

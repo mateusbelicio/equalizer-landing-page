@@ -35,18 +35,33 @@
 
 .grid-container {
   --padding-inline: #{to-rem(24)};
-  --num-grid: 12;
-  --col-gap: 0;
+  --num-grid: 1;
+  --col-gap: #{to-rem(10)};
+
+  $col-width: minmax(
+    0,
+    calc(($max-width - ((var(--num-grid) - 1) * var(--col-gap))) / var(--num-grid))
+  );
 
   display: grid;
   grid-template-columns:
-    [full-start] minmax(var(--padding-inline), 1fr) [center-start]
-    repeat(var(--num-grid), [col-start] minmax(0, calc($max-width / var(--num-grid))) [col-end])
-    [center-end] minmax(var(--padding-inline), 1fr) [full-end];
+    [full-start] minmax(calc(var(--padding-inline) - var(--col-gap)), 1fr) [center-start]
+    repeat(var(--num-grid), [col-start] $col-width [col-end])
+    [center-end] minmax(calc(var(--padding-inline) - var(--col-gap)), 1fr) [full-end];
+
   column-gap: var(--col-gap);
 
   & > * {
     grid-column: center;
+  }
+
+  @include breakpoint('small') {
+    --padding-inline: #{to-rem(40)};
+    --num-grid: 12;
+  }
+
+  @include breakpoint('large') {
+    --col-gap: #{to-rem(30)};
   }
 }
 

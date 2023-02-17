@@ -5,10 +5,43 @@
 @use '../abstracts/' as *;
 
 .header {
+  position: relative;
   padding-block: to-rem(40) to-rem(166);
+  transition: background-size 0.4s ease-out;
 
   @include breakpoint('small') {
     padding-block: to-rem(62) to-rem(250);
+    background-image: url(../assets/bg-pattern-1.svg);
+    background-repeat: no-repeat;
+    background-position: right to-rem(-36) top to-rem(-32);
+    background-size: auto to-rem(400);
+
+    &::before {
+      content: '';
+      aspect-ratio: 1;
+      width: to-rem(384);
+      border-radius: 50%;
+
+      background-color: #ff7b40;
+      opacity: 0.16;
+      filter: blur(to-rem(68));
+
+      position: absolute;
+      top: to-rem(-112);
+      left: to-rem(-254);
+      z-index: z('below');
+      transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+  }
+
+  @include breakpoint('large') {
+    padding-block: to-rem(62) to-rem(320);
+    background-size: auto to-rem(468);
+    background-position: right 0 top to-rem(-40);
+
+    &::before {
+      left: to-rem(-146);
+    }
   }
 
   &__container {
@@ -16,6 +49,15 @@
     flex-direction: column;
     align-items: start;
     gap: to-rem(64);
+
+    @include breakpoint('small') {
+      grid-column: center-start / col-end 9;
+    }
+
+    @include breakpoint('large') {
+      grid-column: center-start / col-end 10;
+      width: 95%;
+    }
   }
 
   &__text-box {

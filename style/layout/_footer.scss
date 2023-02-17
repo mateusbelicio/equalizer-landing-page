@@ -53,11 +53,11 @@
 
   @include breakpoint('small') {
     &__copy {
-      grid-column: center-start / col-end 6;
+      grid-column: center-start / col-end 7;
     }
 
     &__social {
-      grid-column: col-start 7 / center-end;
+      grid-column: col-start 8 / center-end;
       justify-self: end;
       margin-top: 0;
     }
@@ -66,10 +66,12 @@
   @include breakpoint('large') {
     &__logo {
       grid-column: center-start / col-end 3;
+      align-self: start;
     }
 
     &__copy {
       grid-column: col-start 4 / col-end 8;
+      width: 90%;
     }
 
     &__social {

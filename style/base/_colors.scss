@@ -13,3 +13,8 @@
     }
   }
 }
+
+::selection {
+  background-color: clr('primary', 300);
+  color: clr('neutral', 500);
+}
