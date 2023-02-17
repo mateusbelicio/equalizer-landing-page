@@ -30,14 +30,17 @@ body {
 
 .heading--1 {
   font-size: to-rem(40);
+  letter-spacing: -0.45px;
 
   @include breakpoint('small') {
     font-size: to-rem(64);
+    letter-spacing: -0.73px;
     line-height: 1;
   }
 
   @include breakpoint('large') {
     font-size: to-rem(88);
+    letter-spacing: -1px;
   }
 }
 

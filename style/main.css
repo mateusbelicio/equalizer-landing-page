@@ -196,16 +196,19 @@ body {
 
 .heading--1 {
   font-size: 2.5rem;
+  letter-spacing: -0.45px;
 }
 @media only screen and (min-width: 37.6em) {
   .heading--1 {
     font-size: 4rem;
+    letter-spacing: -0.73px;
     line-height: 1;
   }
 }
 @media only screen and (min-width: 62.5em) {
   .heading--1 {
     font-size: 5.5rem;
+    letter-spacing: -1px;
   }
 }
 
@@ -281,6 +284,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+@media only screen and (min-width: 37.6em) {
+  .header__text-box {
+    gap: 1.75rem;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  .header__text-box {
+    gap: 2.5rem;
+  }
 }
 
 .premium {
