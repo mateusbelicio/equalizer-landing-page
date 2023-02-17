@@ -461,6 +461,9 @@ body {
   color: var(--clr-primary-400);
 }
 @media only screen and (min-width: 37.6em) {
+  .footer {
+    padding-bottom: 5.3125rem;
+  }
   .footer__copy {
     grid-column: center-start/col-end 7;
   }
@@ -471,6 +474,9 @@ body {
   }
 }
 @media only screen and (min-width: 62.5em) {
+  .footer {
+    padding-bottom: 5.625rem;
+  }
   .footer__logo {
     grid-column: center-start/col-end 3;
     align-self: start;

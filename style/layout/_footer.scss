@@ -52,6 +52,8 @@
   }
 
   @include breakpoint('small') {
+    padding-bottom: to-rem(85);
+
     &__copy {
       grid-column: center-start / col-end 7;
     }
@@ -64,6 +66,8 @@
   }
 
   @include breakpoint('large') {
+    padding-bottom: to-rem(90);
+
     &__logo {
       grid-column: center-start / col-end 3;
       align-self: start;
